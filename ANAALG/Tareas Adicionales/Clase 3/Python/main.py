@@ -12,10 +12,12 @@ def es_primo(numero):
 # Función para generar números aleatorios y contar los primos
 def contar_primos(arreglo_numeros):
     cantidad_primos = 0
+    primos_encontrados = []  # Lista para guardar los números primos encontrados
     for numero in arreglo_numeros:
         if es_primo(numero):
+            primos_encontrados.append(numero)
             cantidad_primos += 1
-    return cantidad_primos
+    return cantidad_primos, primos_encontrados
 
 # Función para calcular la suma de las filas y columnas de una matriz
 def sumar_filas_y_columnas(matriz_numeros, tamaño_matriz):
@@ -37,9 +39,10 @@ def main():
     print("Arreglo generado:")
     print(arreglo_numeros)
 
-    # Contar los números primos
-    cantidad_primos = contar_primos(arreglo_numeros)
+    # Contar los números primos y mostrarlos
+    cantidad_primos, primos_encontrados = contar_primos(arreglo_numeros)
     print(f"\nCantidad de números primos en el arreglo: {cantidad_primos}")
+    print(f"Números primos encontrados: {primos_encontrados}")
 
     # Parte 2: Crear y sumar las filas y columnas de una matriz
     tamaño_matriz = int(input("\nIngresa el tamaño de la matriz (n): "))
