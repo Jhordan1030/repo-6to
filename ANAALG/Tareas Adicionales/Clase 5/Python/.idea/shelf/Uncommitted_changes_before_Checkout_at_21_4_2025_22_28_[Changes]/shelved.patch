@@ -1,0 +1,144 @@
+Index: ../../Clase 3/Java/TareaAd-Clase3/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.util.Random;\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    // Función para verificar si un número es primo\r\n    public static boolean esPrimo(int numero) {\r\n        if (numero <= 1) {\r\n            return false;\r\n        }\r\n        for (int divisor = 2; divisor <= Math.sqrt(numero); divisor++) {\r\n            if (numero % divisor == 0) {\r\n                return false;\r\n            }\r\n        }\r\n        return true;\r\n    }\r\n\r\n    // Función para generar números aleatorios y contar los primos\r\n    public static int contarPrimos(int[] arregloNumeros) {\r\n        int cantidadPrimos = 0;\r\n        for (int numero : arregloNumeros) {\r\n            if (esPrimo(numero)) {\r\n                cantidadPrimos++;\r\n            }\r\n        }\r\n        return cantidadPrimos;\r\n    }\r\n\r\n    // Función para calcular la suma de las filas y columnas de una matriz\r\n    public static void sumarFilasYColumnas(int[][] matrizNumeros, int tamañoMatriz) {\r\n        // Sumar filas\r\n        for (int fila = 0; fila < tamañoMatriz; fila++) {\r\n            int sumaFila = 0;\r\n            for (int columna = 0; columna < tamañoMatriz; columna++) {\r\n                sumaFila += matrizNumeros[fila][columna];\r\n            }\r\n            System.out.println(\"Suma de la fila \" + (fila + 1) + \": \" + sumaFila);\r\n        }\r\n\r\n        // Sumar columnas\r\n        for (int columna = 0; columna < tamañoMatriz; columna++) {\r\n            int sumaColumna = 0;\r\n            for (int fila = 0; fila < tamañoMatriz; fila++) {\r\n                sumaColumna += matrizNumeros[fila][columna];\r\n            }\r\n            System.out.println(\"Suma de la columna \" + (columna + 1) + \": \" + sumaColumna);\r\n        }\r\n    }\r\n    public static void main(String[] args) {\r\n        Scanner scanner = new Scanner(System.in);\r\n\r\n        // Parte 1: Ingresar arreglo de números aleatorios\r\n        System.out.print(\"Ingresa el tamaño del arreglo: \");\r\n        int tamañoArreglo = scanner.nextInt();\r\n        int[] arregloNumeros = new int[tamañoArreglo];\r\n        Random generadorAleatorio = new Random();\r\n\r\n        // Llenar el arreglo con números aleatorios\r\n        System.out.println(\"Arreglo generado:\");\r\n        for (int indice = 0; indice < tamañoArreglo; indice++) {\r\n            arregloNumeros[indice] = generadorAleatorio.nextInt(100);  // Números aleatorios entre 0 y 99\r\n            System.out.print(arregloNumeros[indice] + \" \");\r\n        }\r\n\r\n        // Contar los números primos\r\n        int cantidadPrimos = contarPrimos(arregloNumeros);\r\n        System.out.println(\"\\nCantidad de números primos en el arreglo: \" + cantidadPrimos);\r\n\r\n        // Parte 2: Crear y sumar las filas y columnas de una matriz\r\n        System.out.print(\"\\nIngresa el tamaño de la matriz (n): \");\r\n        int tamañoMatriz = scanner.nextInt();\r\n        int[][] matrizNumeros = new int[tamañoMatriz][tamañoMatriz];\r\n\r\n        // Llenar la matriz con números aleatorios\r\n        System.out.println(\"Matriz generada:\");\r\n        for (int fila = 0; fila < tamañoMatriz; fila++) {\r\n            for (int columna = 0; columna < tamañoMatriz; columna++) {\r\n                matrizNumeros[fila][columna] = generadorAleatorio.nextInt(100);  // Números aleatorios entre 0 y 99\r\n                System.out.print(matrizNumeros[fila][columna] + \" \");\r\n            }\r\n            System.out.println();\r\n        }\r\n\r\n        // Sumar las filas y columnas\r\n        sumarFilasYColumnas(matrizNumeros, tamañoMatriz);\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../Clase 3/Java/TareaAd-Clase3/src/Main.java b/../../Clase 3/Java/TareaAd-Clase3/src/Main.java
+--- a/../../Clase 3/Java/TareaAd-Clase3/src/Main.java	(revision 4358b4ca8723b7049c2b8a165ec58d5ff1111bcf)
++++ b/../../Clase 3/Java/TareaAd-Clase3/src/Main.java	(date 1745208823129)
+@@ -18,12 +18,16 @@
+     // Función para generar números aleatorios y contar los primos
+     public static int contarPrimos(int[] arregloNumeros) {
+         int cantidadPrimos = 0;
++        System.out.print("\nNúmeros primos encontrados: ");
++        // Recorrer el arreglo y verificar si cada número es primo
+         for (int numero : arregloNumeros) {
+             if (esPrimo(numero)) {
++                System.out.print(numero + " ");  // Mostrar el número primo
+                 cantidadPrimos++;
+             }
+         }
+-        return cantidadPrimos;
++        System.out.println();  // Salto de línea después de mostrar los primos
++        return cantidadPrimos;  // Retornar la cantidad de primos
+     }
+ 
+     // Función para calcular la suma de las filas y columnas de una matriz
+@@ -46,6 +50,7 @@
+             System.out.println("Suma de la columna " + (columna + 1) + ": " + sumaColumna);
+         }
+     }
++
+     public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+ 
+@@ -62,7 +67,7 @@
+             System.out.print(arregloNumeros[indice] + " ");
+         }
+ 
+-        // Contar los números primos
++        // Contar los números primos y mostrar los primos encontrados
+         int cantidadPrimos = contarPrimos(arregloNumeros);
+         System.out.println("\nCantidad de números primos en el arreglo: " + cantidadPrimos);
+ 
+@@ -83,6 +88,5 @@
+ 
+         // Sumar las filas y columnas
+         sumarFilasYColumnas(matrizNumeros, tamañoMatriz);
+-
+     }
+-}
+\ No newline at end of file
++}
+Index: ../Java/TareaAd-Clase5/src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//TIP To <b>Run</b> code, press <shortcut actionId=\"Run\"/> or\r\n// click the <icon src=\"AllIcons.Actions.Execute\"/> icon in the gutter.\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        //TIP Press <shortcut actionId=\"ShowIntentionActions\"/> with your caret at the highlighted text\r\n        // to see how IntelliJ IDEA suggests fixing it.\r\n        System.out.printf(\"Hello and welcome!\");\r\n\r\n        for (int i = 1; i <= 5; i++) {\r\n            //TIP Press <shortcut actionId=\"Debug\"/> to start debugging your code. We have set one <icon src=\"AllIcons.Debugger.Db_set_breakpoint\"/> breakpoint\r\n            // for you, but you can always add more by pressing <shortcut actionId=\"ToggleLineBreakpoint\"/>.\r\n            System.out.println(\"i = \" + i);\r\n        }\r\n    }\r\n}
+===================================================================
+diff --git a/../Java/TareaAd-Clase5/src/Main.java b/../Java/TareaAd-Clase5/src/Main.java
+--- a/../Java/TareaAd-Clase5/src/Main.java	(revision 4358b4ca8723b7049c2b8a165ec58d5ff1111bcf)
++++ b/../Java/TareaAd-Clase5/src/Main.java	(date 1745292128955)
+@@ -1,15 +1,71 @@
+-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
++import java.util.Random;
++import java.util.Scanner;
++
+ public class Main {
++
++    // Función para verificar si un número es primo
++    public static boolean esPrimo(int numero) {
++        if (numero <= 1) {
++            return false;
++        }
++        for (int divisor = 2; divisor <= Math.sqrt(numero); divisor++) {
++            if (numero % divisor == 0) {
++                return false;
++            }
++        }
++        return true;
++    }
++
++    // Función para generar números aleatorios y encontrar los primos en la matriz
++    public static void encontrarPrimosEnMatriz(int[][] matrizNumeros, int numFilas, int numColumnas) {
++        int cantidadPrimos = 0;
++        System.out.print("Números primos encontrados: ");
++        // Recorrer la matriz para buscar los números primos
++        for (int fila = 0; fila < numFilas; fila++) {
++            for (int columna = 0; columna < numColumnas; columna++) {
++                if (esPrimo(matrizNumeros[fila][columna])) {
++                    System.out.print(matrizNumeros[fila][columna] + " ");  // Mostrar el número primo
++                    cantidadPrimos++;
++                }
++            }
++        }
++        System.out.println(); // Salto de línea después de mostrar los primos
++        System.out.println("\nCantidad de números primos encontrados: " + cantidadPrimos);
++    }
+     public static void main(String[] args) {
+-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+-        // to see how IntelliJ IDEA suggests fixing it.
+-        System.out.printf("Hello and welcome!");
++        Scanner scanner = new Scanner(System.in);
++        Random random = new Random();
++
++        // Definir las dimensiones de la matriz
++        System.out.print("Ingresar el número de filas: ");
++        int numFilas = scanner.nextInt();
++
++        System.out.print("Ingresar el número de columnas: ");
++        int numColumnas = scanner.nextInt(); // Número de columnas
++
++        // Crear la matriz de enteros de orden m x n
++        int[][] matrizNumeros = new int[numFilas][numColumnas];
+ 
+-        for (int i = 1; i <= 5; i++) {
+-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+-            System.out.println("i = " + i);
++        // Llenar la matriz con números aleatorios entre 0 y 100
++        System.out.println("Matriz generada:");
++        for (int fila = 0; fila < numFilas; fila++) {
++            for (int columna = 0; columna < numColumnas; columna++) {
++                matrizNumeros[fila][columna] = random.nextInt(100); // Generar número aleatorio entre 0 y 99
++                System.out.print(matrizNumeros[fila][columna] + " ");
++            }
++            System.out.println();
+         }
++
++        // Medir el tiempo de ejecución para encontrar los primos
++        long startTime = System.nanoTime(); // Inicio del tiempo
++
++        // Buscar los primos en la matriz
++        encontrarPrimosEnMatriz(matrizNumeros, numFilas, numColumnas);
++
++        long endTime = System.nanoTime(); // Fin del tiempo
++
++        // Calcular el tiempo transcurrido
++        long duration = endTime - startTime;
++        System.out.println("\nTiempo estimado para encontrar los números primos: " + duration + " nanosegundos.");
+     }
+ }
+\ No newline at end of file
