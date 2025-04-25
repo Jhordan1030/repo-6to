@@ -1,0 +1,12 @@
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\bin\Release\net8.0\CluodComputing.Models.deps.json
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\bin\Release\net8.0\CluodComputing.Models.dll
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\bin\Release\net8.0\CluodComputing.Models.pdb
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\CluodComputing.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\CluodComputing.Models.AssemblyInfoInputs.cache
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\CluodComputing.Models.AssemblyInfo.cs
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\CluodComputing.Models.csproj.CoreCompileInputs.cache
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\CluodComputing.Models.sourcelink.json
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\CluodComputing.Models.dll
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\refint\CluodComputing.Models.dll
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\CluodComputing.Models.pdb
+C:\Users\jhord\Documents\Universidad\Sexto Semestre\repo-6to\CloudCompiuting.Api\CluodComputing.Models\obj\Release\net8.0\ref\CluodComputing.Models.dll
