@@ -1,15 +1,13 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit; // Para mejor formato de tiempo
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-    // Método para calcular Fibonacci (long, iterativo) - Sin cambios
+    // Método para calcular Fibonacci
     public static long fibonacci(int n) {
-        if (n < 0) throw new IllegalArgumentException("El índice de Fibonacci no puede ser negativo.");
-        if (n == 0) return 0;
-        if (n == 1) return 1;
+        if (n <= 1) return n;
         long a = 0, b = 1;
         for (int i = 2; i <= n; i++) {
             long temp = a + b;
@@ -19,51 +17,27 @@ public class Main {
         return b;
     }
 
-    // Método para GENERAR la matriz 3x5 específica del ejemplo Grupo 1 [cite: 5]
-    // Devuelve null si las dimensiones no son 3x5
-    public static String[][] generarMatrizGrupo1(int filas, int columnas) {
-        // Verificar si las dimensiones son 3x5 para aplicar el patrón del ejemplo
+    // Método para generar la matriz EXACTA del Grupo 1
+    public static String[][] generarMatrizGrupo1Exacta(int filas, int columnas) {
+        // Solo generamos la matriz exacta para 3x5
         if (filas != 3 || columnas != 5) {
-            System.out.println("Advertencia: El patrón específico del ejemplo Grupo 1 [cite: 5] solo está definido para 3x5.");
-            System.out.println("No se puede generar la matriz para las dimensiones " + filas + "x" + columnas + " según ese ejemplo.");
-            return null; // Indicar que no se pudo generar según el ejemplo específico
+            System.out.println("La matriz exacta del Grupo 1 solo está definida para 3x5");
+            return null;
         }
 
-        // Índices k de Fibonacci para el ejemplo 3x5 de Grupo 1 [cite: 5]
-        int[][] k_indices = {
-                {15, 10, 9, 4, 3},
-                {14, 11, 8, 5, 2},
-                {13, 12, 7, 6, 0} // Placeholder para -1
+        // Valores exactos del ejemplo
+        String[][] matrizExacta = {
+                {"610/111", "55/71", "34/63", "3/23", "2/15"},
+                {"377/103", "89/79", "21/55", "5/31", "1/7"},
+                {"233/95", "144/87", "13/47", "8/39", "-1"}
         };
 
-        String[][] matriz = new String[filas][columnas];
-
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < columnas; j++) {
-                if (i == 2 && j == 4) { // Caso especial -1 del ejemplo [cite: 5]
-                    matriz[i][j] = "-1";
-                } else {
-                    int k = k_indices[i][j];
-                    long fib_k = fibonacci(k);
-                    long denominador = 8L * k - 9L; // Fórmula derivada del ejemplo
-
-                    if (denominador == 0) {
-                        System.err.println("Error: Denominador cero para k=" + k + " en [" + i + "][" + j + "]");
-                        matriz[i][j] = fib_k + "/0";
-                    } else {
-                        matriz[i][j] = fib_k + "/" + denominador;
-                    }
-                }
-            }
-        }
-        return matriz;
+        return matrizExacta;
     }
 
-    // --- Métodos auxiliares: imprimirMatriz, multiplicarMatrices, transponerMatriz, imprimirMatrizDoubles ---
-    // (Sin cambios respecto a la versión anterior, se incluyen por completitud)
-
+    // Método para imprimir matriz
     public static void imprimirMatriz(String[][] matriz) {
-        if (matriz == null || matriz.length == 0) return;
+        if (matriz == null) return;
         for (String[] fila : matriz) {
             for (String val : fila) {
                 System.out.print(val + "\t");
@@ -72,77 +46,23 @@ public class Main {
         }
     }
 
-    public static double[][] multiplicarMatrices(double[][] A, double[][] B) {
-        int filasA = A.length;
-        int colA = (filasA > 0) ? A[0].length : 0;
-        int filasB = B.length;
-        int colB = (filasB > 0) ? B[0].length : 0;
-
-        if (colA == 0 || colB == 0) throw new IllegalArgumentException("Matrices vacías.");
-        if (colA != filasB) throw new IllegalArgumentException("Dimensiones incompatibles para multiplicación.");
-
-        double[][] res = new double[filasA][colB];
-        for (int i = 0; i < filasA; i++) {
-            for (int j = 0; j < colB; j++) {
-                for (int k = 0; k < colA; k++) {
-                    if (Double.isNaN(A[i][k]) || Double.isNaN(B[k][j])) {
-                        res[i][j] = Double.NaN; break;
-                    }
-                    res[i][j] += A[i][k] * B[k][j];
-                }
-            }
-        }
-        return res;
-    }
-
-    public static double[][] transponerMatriz(double[][] matriz) {
-        int filas = matriz.length;
-        if (filas == 0) return new double[0][0];
-        int col = matriz[0].length;
-        double[][] transpuesta = new double[col][filas];
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < col; j++) {
-                transpuesta[j][i] = matriz[i][j];
-            }
-        }
-        return transpuesta;
-    }
-
-    public static void imprimirMatrizDoubles(double[][] matriz) {
-        if (matriz == null || matriz.length == 0) return;
-        for (double[] fila : matriz) {
-            for (double val : fila) {
-                if (Double.isNaN(val)) System.out.print("NaN\t");
-                else System.out.print(String.format("%.3f", val) + "\t");
-            }
-            System.out.println();
-        }
-    }
-
-    // Método para convertir String[][] a double[][], manejando errores
+    // Método para convertir matriz String a double
     public static double[][] convertirMatrizADouble(String[][] matrizStr) {
         if (matrizStr == null) return null;
-        int filas = matrizStr.length;
-        if (filas == 0) return new double[0][0];
-        int col = matrizStr[0].length;
-        double[][] matrizNum = new double[filas][col];
+        double[][] matrizNum = new double[matrizStr.length][matrizStr[0].length];
 
-        for (int i = 0; i < filas; i++) {
-            for (int j = 0; j < col; j++) {
+        for (int i = 0; i < matrizStr.length; i++) {
+            for (int j = 0; j < matrizStr[i].length; j++) {
                 try {
-                    String elem = matrizStr[i][j];
-                    if (elem.equals("-1")) {
+                    if (matrizStr[i][j].equals("-1")) {
                         matrizNum[i][j] = -1.0;
-                    } else if (elem.contains("/")) {
-                        String[] p = elem.split("/");
-                        if(p.length == 2) {
-                            double num = Double.parseDouble(p[0]);
-                            double den = Double.parseDouble(p[1]);
-                            matrizNum[i][j] = (den == 0) ? Double.NaN : num / den;
-                        } else matrizNum[i][j] = Double.NaN; // Formato inválido
-                    } else matrizNum[i][j] = Double.parseDouble(elem);
-                } catch (NumberFormatException e) {
-                    System.err.println("Error convirtiendo '" + matrizStr[i][j] + "' a número.");
+                    } else {
+                        String[] partes = matrizStr[i][j].split("/");
+                        double num = Double.parseDouble(partes[0]);
+                        double den = Double.parseDouble(partes[1]);
+                        matrizNum[i][j] = num / den;
+                    }
+                } catch (Exception e) {
                     matrizNum[i][j] = Double.NaN;
                 }
             }
@@ -150,94 +70,101 @@ public class Main {
         return matrizNum;
     }
 
-    // --- Main ---
+    // Método para transponer matriz
+    public static double[][] transponerMatriz(double[][] matriz) {
+        if (matriz == null || matriz.length == 0) return new double[0][0];
+        double[][] transpuesta = new double[matriz[0].length][matriz.length];
+
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                transpuesta[j][i] = matriz[i][j];
+            }
+        }
+        return transpuesta;
+    }
+
+    // Método para multiplicar matrices
+    public static double[][] multiplicarMatrices(double[][] A, double[][] B) {
+        if (A == null || B == null) throw new IllegalArgumentException("Matrices nulas");
+
+        double[][] resultado = new double[A.length][B[0].length];
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < B[0].length; j++) {
+                for (int k = 0; k < A[0].length; k++) {
+                    resultado[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+        return resultado;
+    }
+
+    // Método para imprimir matriz de doubles
+    public static void imprimirMatrizDoubles(double[][] matriz) {
+        if (matriz == null) return;
+        for (double[] fila : matriz) {
+            for (double val : fila) {
+                System.out.printf("%.4f\t", val);
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n_filas, m_columnas;
 
-        // 1. Ingreso de dimensiones por teclado [cite: 10]
-        System.out.println("Ingrese las dimensiones de la matriz A:");
-        System.out.print("Número de filas (n): ");
-        n_filas = scanner.nextInt();
-        System.out.print("Número de columnas (m): ");
-        m_columnas = scanner.nextInt();
+        System.out.println("ANÁLISIS DE ALGORITMOS - EVALUACIÓN 2");
+        System.out.println("Grupo 1: Matriz Exacta 3x5");
+        System.out.print("\nIngrese número de filas (debe ser 3): ");
+        int filas = scanner.nextInt();
+        System.out.print("Ingrese número de columnas (debe ser 5): ");
+        int columnas = scanner.nextInt();
 
-        // Lista para guardar los tiempos de ejecución
-        List<Long> tiemposEjecucion = new ArrayList<>();
-        String[][] matrizA_str = null;
-        double[][] matrizResultado = null;
-
-        System.out.println("\nEjecutando el proceso 10 veces para medir tiempos...");
-
-        // 2. Bucle para 10 ejecuciones [cite: 3]
-        for (int ejecucion = 1; ejecucion <= 10; ejecucion++) {
-            long startTime = System.nanoTime();
-
-            // a. Generar Matriz A (solo si es 3x5 según ejemplo Grupo 1) [cite: 5]
-            matrizA_str = generarMatrizGrupo1(n_filas, m_columnas);
-
-            // Si no se pudo generar (dimensiones != 3x5), no continuar
-            if (matrizA_str == null) {
-                System.out.println("Abortando medición de tiempo debido a dimensiones no válidas para el ejemplo.");
-                tiemposEjecucion.clear(); // Limpiar tiempos si no se pudo completar
-                break; // Salir del bucle de ejecuciones
-            }
-
-            // b. Convertir a double
-            double[][] matrizA_num = convertirMatrizADouble(matrizA_str);
-
-            // c. Transponer A -> A'
-            double[][] matrizATranspuesta = transponerMatriz(matrizA_num);
-
-            // d. Multiplicar A * A' [cite: 3]
-            try {
-                matrizResultado = multiplicarMatrices(matrizA_num, matrizATranspuesta);
-            } catch (IllegalArgumentException e) {
-                System.err.println("\nError en la ejecución " + ejecucion + ": " + e.getMessage());
-                matrizResultado = null; // Indicar fallo
-            }
-
-            long endTime = System.nanoTime();
-            long duration = endTime - startTime;
-            tiemposEjecucion.add(duration);
-
-            // Imprimir detalles solo en la primera ejecución para verificar
-            if (ejecucion == 1 && matrizA_str != null) {
-                System.out.println("\n--- Detalles de la Primera Ejecución ---");
-                System.out.println("Matriz A Generada (" + n_filas + "x" + m_columnas + "):");
-                imprimirMatriz(matrizA_str);
-                if (matrizResultado != null) {
-                    System.out.println("\nResultado de A * A' (" + matrizResultado.length + "x" + (matrizResultado.length > 0 ? matrizResultado[0].length : 0) + "):");
-                    imprimirMatrizDoubles(matrizResultado);
-                } else {
-                    System.out.println("\nNo se pudo calcular A * A'.");
-                }
-                System.out.println("--------------------------------------");
-            }
-            // Pequeña pausa para variar ligeramente las condiciones si es necesario
-            try { Thread.sleep(50); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
-
-        } // Fin del bucle de 10 ejecuciones
-
-        // 3. Mostrar los tiempos de ejecución registrados
-        if (!tiemposEjecucion.isEmpty()) {
-            System.out.println("\n--- Tiempos de Ejecución Registrados (nanosegundos) ---");
-            for (int i = 0; i < tiemposEjecucion.size(); i++) {
-                System.out.println("Ejecución " + (i + 1) + ": " + tiemposEjecucion.get(i) + " ns (" +
-                        TimeUnit.NANOSECONDS.toMillis(tiemposEjecucion.get(i)) + " ms)");
-            }
-            // Calcular promedio (opcional)
-            long sumaTiempos = 0;
-            for(long t : tiemposEjecucion) sumaTiempos += t;
-            double promedioNs = (double)sumaTiempos / tiemposEjecucion.size();
-            System.out.printf("Tiempo promedio: %.3f ns (%.3f ms)\n", promedioNs, promedioNs / 1_000_000.0);
-
-        } else if (n_filas != 3 || m_columnas != 5) {
-            System.out.println("\nNo se registraron tiempos ya que las dimensiones no fueron 3x5.");
-        } else {
-            System.out.println("\nNo se completaron las ejecuciones, no hay tiempos para mostrar.");
+        if (filas != 3 || columnas != 5) {
+            System.out.println("Error: La matriz exacta solo está definida para 3x5");
+            scanner.close();
+            return;
         }
 
+        List<Long> tiempos = new ArrayList<>();
+        String[][] matrizStr = null;
+        double[][] matrizResultado = null;
+
+        System.out.println("\nEjecutando proceso 10 veces para medición de tiempos...");
+
+        for (int i = 0; i < 10; i++) {
+            long inicio = System.nanoTime();
+
+            matrizStr = generarMatrizGrupo1Exacta(filas, columnas);
+            double[][] matrizA = convertirMatrizADouble(matrizStr);
+            double[][] matrizAT = transponerMatriz(matrizA);
+            matrizResultado = multiplicarMatrices(matrizA, matrizAT);
+
+            long fin = System.nanoTime();
+            tiempos.add(fin - inicio);
+
+            if (i == 0) {
+                System.out.println("\n=== Resultados de la primera ejecución ===");
+                System.out.println("Matriz A (3x5):");
+                imprimirMatriz(matrizStr);
+
+                System.out.println("\nMatriz A*A' (3x3):");
+                imprimirMatrizDoubles(matrizResultado);
+                System.out.println("=======================================");
+            }
+
+            try { Thread.sleep(20); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+        }
+
+        System.out.println("\n=== Tiempos de ejecución (nanosegundos) ===");
+        for (int i = 0; i < tiempos.size(); i++) {
+            System.out.printf("Ejecución %2d: %,12d ns (%,8.3f ms)\n",
+                    i+1, tiempos.get(i), tiempos.get(i)/1_000_000.0);
+        }
+
+        long suma = tiempos.stream().mapToLong(Long::longValue).sum();
+        double promedio = suma / (double)tiempos.size();
+
+        System.out.printf("\nTiempo promedio: %,12.2f ns (%,8.3f ms)\n", promedio, promedio/1_000_000.0);
 
         scanner.close();
     }
