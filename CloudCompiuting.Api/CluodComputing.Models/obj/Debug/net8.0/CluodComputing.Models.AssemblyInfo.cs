@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CluodComputing.Models")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+577d132d48172c5286e63ebdb76234c739979ddb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4df4defd8d226c5c8b7066e2f98c97763a2b8af8")]
 [assembly: System.Reflection.AssemblyProductAttribute("CluodComputing.Models")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CluodComputing.Models")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
