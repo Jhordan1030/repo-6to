@@ -1,171 +1,232 @@
-import java.util.Scanner;
+import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit; // Optional: for converting ns to ms or s
 
 public class Main {
 
-    // Método para calcular Fibonacci
-    public static long fibonacci(int n) {
-        if (n <= 1) return n;
-        long a = 0, b = 1;
-        for (int i = 2; i <= n; i++) {
-            long temp = a + b;
+    // Cache for Fibonacci numbers
+    private static Map<Integer, BigInteger> fibCache = new HashMap<>();
+
+    // --- Fibonacci Calculation ---
+    public static BigInteger fibonacci(int k) {
+        if (k <= 0) {
+            // Consistent with Python: F(1)=1, F(2)=1
+            if (k == 1) return BigInteger.ONE;
+            return BigInteger.ZERO; // Or handle as error
+        }
+        if (k == 1 || k == 2) {
+            return BigInteger.ONE;
+        }
+        if (fibCache.containsKey(k)) {
+            return fibCache.get(k);
+        }
+
+        // Iterative calculation from k=3
+        // Ensure cache has base cases
+        fibCache.put(1, BigInteger.ONE);
+        fibCache.put(2, BigInteger.ONE);
+
+        BigInteger a = BigInteger.ONE; // F(k-2) starts at F(1)
+        BigInteger b = BigInteger.ONE; // F(k-1) starts at F(2)
+
+        for (int i = 3; i <= k; i++) {
+            // Check if already computed by another call path
+            if (fibCache.containsKey(i)) {
+                a = fibCache.get(i-1);
+                b = fibCache.get(i);
+                continue; // Skip to next i if this one is cached
+            }
+            BigInteger nextFib = a.add(b);
             a = b;
-            b = temp;
+            b = nextFib;
+            fibCache.put(i, b); // Store F(i)
         }
-        return b;
+        return b; // F(k)
     }
 
-    // Método para generar la matriz EXACTA del Grupo 1
-    public static String[][] generarMatrizGrupo1Exacta(int filas, int columnas) {
-        // Solo generamos la matriz exacta para 3x5
-        if (filas != 3 || columnas != 5) {
-            System.out.println("La matriz exacta del Grupo 1 solo está definida para 3x5");
-            return null;
+
+    // --- Series Term Calculation (Grupo 1) ---
+    public static Fraction calculateTermGroup1(int k) {
+        if (k <= 0) return new Fraction(0, 1); // Or handle error
+
+        BigInteger numerator = fibonacci(k);
+        // Denominator: 8*(k-1) - 1
+        BigInteger denominator = BigInteger.valueOf(8).multiply(BigInteger.valueOf(k - 1)).subtract(BigInteger.ONE);
+
+        if (denominator.equals(BigInteger.ZERO)) {
+            System.err.println("Warning: Denominator is zero for k=" + k);
+            // Decide how to handle: return 0, NaN equivalent, or throw exception
+            return new Fraction(0, 1); // Return 0/1 for simplicity
         }
 
-        // Valores exactos del ejemplo
-        String[][] matrizExacta = {
-                {"610/111", "55/71", "34/63", "3/23", "2/15"},
-                {"377/103", "89/79", "21/55", "5/31", "1/7"},
-                {"233/95", "144/87", "13/47", "8/39", "-1"}
-        };
-
-        return matrizExacta;
+        return new Fraction(numerator, denominator);
     }
 
-    // Método para imprimir matriz
-    public static void imprimirMatriz(String[][] matriz) {
-        if (matriz == null) return;
-        for (String[] fila : matriz) {
-            for (String val : fila) {
-                System.out.print(val + "\t");
+    // --- Matrix Operations ---
+    public static Fraction[][] fillMatrix(int n, int m) {
+        Fraction[][] matrix = new Fraction[n][m];
+        int termIndex = 1; // k starts from 1
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                matrix[i][j] = calculateTermGroup1(termIndex++);
             }
-            System.out.println();
         }
+        return matrix;
     }
 
-    // Método para convertir matriz String a double
-    public static double[][] convertirMatrizADouble(String[][] matrizStr) {
-        if (matrizStr == null) return null;
-        double[][] matrizNum = new double[matrizStr.length][matrizStr[0].length];
+    public static Fraction[][] transpose(Fraction[][] matrix) {
+        if (matrix == null || matrix.length == 0) return new Fraction[0][0];
+        int n = matrix.length;
+        int m = matrix[0].length;
+        Fraction[][] transposedMatrix = new Fraction[m][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                transposedMatrix[j][i] = matrix[i][j];
+            }
+        }
+        return transposedMatrix;
+    }
 
-        for (int i = 0; i < matrizStr.length; i++) {
-            for (int j = 0; j < matrizStr[i].length; j++) {
-                try {
-                    if (matrizStr[i][j].equals("-1")) {
-                        matrizNum[i][j] = -1.0;
+    public static Fraction[][] multiplyMatrices(Fraction[][] matrixA, Fraction[][] matrixB) {
+        int nA = matrixA.length;
+        int mA = matrixA[0].length;
+        int nB = matrixB.length;
+        int mB = matrixB[0].length;
+
+        if (mA != nB) {
+            throw new IllegalArgumentException("Matrix dimensions are incompatible for multiplication: A(" + nA + "x" + mA + "), B(" + nB + "x" + mB + ")");
+        }
+
+        Fraction[][] resultMatrix = new Fraction[nA][mB];
+
+        for (int i = 0; i < nA; i++) { // Rows of A
+            for (int j = 0; j < mB; j++) { // Columns of B
+                Fraction sum = new Fraction(0, 1); // Initialize sum for C[i][j]
+                for (int k = 0; k < mA; k++) { // Columns of A / Rows of B
+                    if (matrixA[i][k] != null && matrixB[k][j] != null) {
+                        sum = sum.add(matrixA[i][k].multiply(matrixB[k][j]));
                     } else {
-                        String[] partes = matrizStr[i][j].split("/");
-                        double num = Double.parseDouble(partes[0]);
-                        double den = Double.parseDouble(partes[1]);
-                        matrizNum[i][j] = num / den;
+                        // Handle nulls if they can occur (shouldn't with current fill logic)
+                        System.err.println("Warning: Null element encountered during multiplication at A["+i+"]["+k+"] or B["+k+"]["+j+"]");
                     }
-                } catch (Exception e) {
-                    matrizNum[i][j] = Double.NaN;
                 }
+                resultMatrix[i][j] = sum; // The sum is already simplified by Fraction class
             }
         }
-        return matrizNum;
+        return resultMatrix;
     }
 
-    // Método para transponer matriz
-    public static double[][] transponerMatriz(double[][] matriz) {
-        if (matriz == null || matriz.length == 0) return new double[0][0];
-        double[][] transpuesta = new double[matriz[0].length][matriz.length];
-
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                transpuesta[j][i] = matriz[i][j];
-            }
-        }
-        return transpuesta;
-    }
-
-    // Método para multiplicar matrices
-    public static double[][] multiplicarMatrices(double[][] A, double[][] B) {
-        if (A == null || B == null) throw new IllegalArgumentException("Matrices nulas");
-
-        double[][] resultado = new double[A.length][B[0].length];
-        for (int i = 0; i < A.length; i++) {
-            for (int j = 0; j < B[0].length; j++) {
-                for (int k = 0; k < A[0].length; k++) {
-                    resultado[i][j] += A[i][k] * B[k][j];
-                }
-            }
-        }
-        return resultado;
-    }
-
-    // Método para imprimir matriz de doubles
-    public static void imprimirMatrizDoubles(double[][] matriz) {
-        if (matriz == null) return;
-        for (double[] fila : matriz) {
-            for (double val : fila) {
-                System.out.printf("%.4f\t", val);
-            }
-            System.out.println();
-        }
-    }
-
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("ANÁLISIS DE ALGORITMOS - EVALUACIÓN 2");
-        System.out.println("Grupo 1: Matriz Exacta 3x5");
-        System.out.print("\nIngrese número de filas (debe ser 3): ");
-        int filas = scanner.nextInt();
-        System.out.print("Ingrese número de columnas (debe ser 5): ");
-        int columnas = scanner.nextInt();
-
-        if (filas != 3 || columnas != 5) {
-            System.out.println("Error: La matriz exacta solo está definida para 3x5");
-            scanner.close();
+    // --- Utility to Print Matrix ---
+    public static void printMatrix(String title, Fraction[][] matrix) {
+        System.out.println("\n" + title + ":");
+        if (matrix == null || matrix.length == 0) {
+            System.out.println("[Empty Matrix]");
             return;
         }
-
-        List<Long> tiempos = new ArrayList<>();
-        String[][] matrizStr = null;
-        double[][] matrizResultado = null;
-
-        System.out.println("\nEjecutando proceso 10 veces para medición de tiempos...");
-
-        for (int i = 0; i < 10; i++) {
-            long inicio = System.nanoTime();
-
-            matrizStr = generarMatrizGrupo1Exacta(filas, columnas);
-            double[][] matrizA = convertirMatrizADouble(matrizStr);
-            double[][] matrizAT = transponerMatriz(matrizA);
-            matrizResultado = multiplicarMatrices(matrizA, matrizAT);
-
-            long fin = System.nanoTime();
-            tiempos.add(fin - inicio);
-
-            if (i == 0) {
-                System.out.println("\n=== Resultados de la primera ejecución ===");
-                System.out.println("Matriz A (3x5):");
-                imprimirMatriz(matrizStr);
-
-                System.out.println("\nMatriz A*A' (3x3):");
-                imprimirMatrizDoubles(matrizResultado);
-                System.out.println("=======================================");
+        int n = matrix.length;
+        int m = matrix[0].length;
+        for (int i = 0; i < n; i++) {
+            System.out.print("[ ");
+            for (int j = 0; j < m; j++) {
+                System.out.print((matrix[i][j] != null ? matrix[i][j].toString() : "null") + (j == m - 1 ? "" : ", "));
             }
+            System.out.println(" ]");
+        }
+    }
 
-            try { Thread.sleep(20); } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+
+    // --- Main Execution Logic ---
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = 0, m = 0;
+
+        // 1. Get User Input
+        while (true) {
+            try {
+                System.out.print("Introduce el número de filas (n): ");
+                n = scanner.nextInt();
+                System.out.print("Introduce el número de columnas (m): ");
+                m = scanner.nextInt();
+                if (n > 0 && m > 0) {
+                    break;
+                } else {
+                    System.out.println("n y m deben ser enteros positivos.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Entrada inválida. Introduce números enteros.");
+                scanner.next(); // Consume invalid input
+            }
+        }
+        scanner.close(); // Close scanner when done
+
+        System.out.println("\nEjecutando experimento para matriz " + n + "x" + m + " (Grupo 1)...");
+
+        List<Long> executionTimesNanos = new ArrayList<>();
+        Fraction[][] matrixAExample = null;
+        Fraction[][] resultMatrixExample = null;
+
+        // 2. Timing Loop (10 executions)
+        for (int i = 0; i < 10; i++) {
+            System.out.println("--- Ejecución " + (i + 1) + "/10 ---");
+            // Clear Fibonacci cache for a fairer timing of each run,
+            // simulating independent execution (optional, depends on desired measurement)
+            // fibCache.clear();
+
+            long startTime = System.nanoTime();
+
+            // Perform the core tasks
+            Fraction[][] matrixA = fillMatrix(n, m);
+            Fraction[][] matrixATransposed = transpose(matrixA);
+            Fraction[][] resultMatrix = multiplyMatrices(matrixA, matrixATransposed);
+
+            long endTime = System.nanoTime();
+            long durationNanos = endTime - startTime;
+            executionTimesNanos.add(durationNanos);
+
+            // Convert nanoseconds to milliseconds or seconds for readability
+            double durationMillis = durationNanos / 1_000_000.0;
+            System.out.printf("Tiempo de ejecución: %.3f ms%n", durationMillis);
+            // System.out.printf("Tiempo de ejecución: %d ns%n", durationNanos); // Alt: print nanoseconds
+
+
+            // Save matrices from the first run
+            if (i == 0) {
+                matrixAExample = matrixA;
+                resultMatrixExample = resultMatrix;
+            }
         }
 
-        System.out.println("\n=== Tiempos de ejecución (nanosegundos) ===");
-        for (int i = 0; i < tiempos.size(); i++) {
-            System.out.printf("Ejecución %2d: %,12d ns (%,8.3f ms)\n",
-                    i+1, tiempos.get(i), tiempos.get(i)/1_000_000.0);
+        // 3. Display Final Results
+        System.out.println("\n--- Resultados Finales ---");
+
+        printMatrix("Matriz A (primera ejecución, " + n + "x" + m + ")", matrixAExample);
+        printMatrix("Resultado A * A^T (primera ejecución, " + n + "x" + n + ")", resultMatrixExample);
+
+
+        System.out.println("\nTiempos de ejecución de las 10 corridas (nanosegundos):");
+        long totalNanos = 0;
+        for (int i = 0; i < executionTimesNanos.size(); i++) {
+            long t = executionTimesNanos.get(i);
+            System.out.println("Corrida " + (i + 1) + ": " + t + " ns");
+            totalNanos += t;
         }
 
-        long suma = tiempos.stream().mapToLong(Long::longValue).sum();
-        double promedio = suma / (double)tiempos.size();
+        if (!executionTimesNanos.isEmpty()) {
+            double averageNanos = (double) totalNanos / executionTimesNanos.size();
+            double sumSqDiff = 0;
+            for (long t : executionTimesNanos) {
+                sumSqDiff += Math.pow(t - averageNanos, 2);
+            }
+            double stdDevNanos = Math.sqrt(sumSqDiff / executionTimesNanos.size());
 
-        System.out.printf("\nTiempo promedio: %,12.2f ns (%,8.3f ms)\n", promedio, promedio/1_000_000.0);
+            System.out.printf("\nTiempo promedio: %.3f ns (%.3f ms)%n", averageNanos, averageNanos / 1_000_000.0);
+            System.out.printf("Desviación estándar: %.3f ns (%.3f ms)%n", stdDevNanos, stdDevNanos / 1_000_000.0);
+        }
 
-        scanner.close();
+        System.out.println("\nNota: Para graficar los tiempos, necesitarías exportar estos valores y usar una herramienta externa o una biblioteca de gráficos Java (como JFreeChart).");
     }
 }
