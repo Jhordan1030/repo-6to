@@ -4,53 +4,66 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a38adc1-ebc6-4d52-8f92-c16855df2a5b" name="Changes" comment="" />
+    <list default="true" id="48100aa5-240d-4524-9a2d-f57bd4bc29ef" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/TareaAd-Clase3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/src/Principal/ArregloNumeros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/src/Principal/MatrizNumeros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Principal/MatrizNumeros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Huera-Eva2.1/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Huera-Eva2.1/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Huera-Eva2/Huera-Eva2/nbproject/private/private.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Huera-Eva2/Huera-Eva2/nbproject/private/private.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/TareaAd-Clase3.1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Clase 3/Java/TareaAd-Clase3/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TareaAd-Clase5/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 3
-}</component>
-  <component name="ProjectId" id="2w1VTjbZyvsTYnx6qLxLBLi0krE" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2wMsR82QUycgCW0Slc4CUCvPHsT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Inicial.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/jhord/Documents/Universidad/Sexto Semestre/repo-6to/ANAALG/Tareas Adicionales/Clase 5/Java/TareaAd-Clase5",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/jhord/Documents/Universidad/Sexto Semestre/Repo-6to/ANAALG/Tareas Adicionales/Clase 5/Java/TareaAd-Clase5/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="TareaAd-Clase5" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -61,29 +74,16 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8a38adc1-ebc6-4d52-8f92-c16855df2a5b" name="Changes" comment="" />
-      <created>1745209078627</created>
+      <changelist id="48100aa5-240d-4524-9a2d-f57bd4bc29ef" name="Changes" comment="" />
+      <created>1745862765984</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1745209078627</updated>
-      <workItem from="1745209080553" duration="82000" />
-      <workItem from="1745290690408" duration="1599000" />
-      <workItem from="1745859825441" duration="889000" />
+      <updated>1745862765984</updated>
+      <workItem from="1745862767696" duration="1349000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
