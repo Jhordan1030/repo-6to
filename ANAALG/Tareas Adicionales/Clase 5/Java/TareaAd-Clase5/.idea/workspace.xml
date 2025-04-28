@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a38adc1-ebc6-4d52-8f92-c16855df2a5b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Repaso pruebas/Repaso02/src/Fraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Repaso pruebas/Repaso02/src/Fraction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Repaso pruebas/Repaso02/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Repaso pruebas/Repaso02/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/.vs/CloudComputing.Api/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/.vs/CloudComputing.Api/v17/.suo" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/.vs/CloudComputing.Api/v17/DocumentLayout.backup.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/.vs/CloudComputing.Api/v17/DocumentLayout.backup.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/.vs/CloudComputing.Api/v17/DocumentLayout.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/.vs/CloudComputing.Api/v17/DocumentLayout.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudCompiuting.Api/obj/Debug/net8.0/CloudCompiuting.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudCompiuting.Api/obj/Debug/net8.0/CloudCompiuting.Api.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudCompiuting.Api/obj/Debug/net8.0/CloudCompiuting.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudCompiuting.Api/obj/Debug/net8.0/CloudCompiuting.Api.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CluodComputing.Models/obj/Debug/net8.0/CluodComputing.Models.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CluodComputing.Models/obj/Debug/net8.0/CluodComputing.Models.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CluodComputing.Models/obj/Debug/net8.0/CluodComputing.Models.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CluodComputing.Models/obj/Debug/net8.0/CluodComputing.Models.AssemblyInfoInputs.cache" afterDir="false" />
-    </list>
+    <list default="true" id="8a38adc1-ebc6-4d52-8f92-c16855df2a5b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,7 +68,7 @@
       <updated>1745209078627</updated>
       <workItem from="1745209080553" duration="82000" />
       <workItem from="1745290690408" duration="1599000" />
-      <workItem from="1745859825441" duration="582000" />
+      <workItem from="1745859825441" duration="889000" />
     </task>
     <servers />
   </component>
