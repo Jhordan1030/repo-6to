@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\jhord\\Documents\\Universidad\\Sexto Semestre\\repo-6to\\CloudCompiuting.Api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|c:\\users\\jhord\\documents\\universidad\\sexto semestre\\repo-6to\\cloudcompiuting.api\\cloudcompiuting.api\\cloudcompiuting.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|solutionrelative:cloudcompiuting.api\\cloudcompiuting.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|c:\\users\\jhord\\documents\\universidad\\sexto semestre\\repo-6to\\cloudcompiuting.api\\cloudcompiuting.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|solutionrelative:cloudcompiuting.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|c:\\users\\jhord\\documents\\universidad\\sexto semestre\\repo-6to\\cloudcompiuting.api\\cloudcompiuting.api\\migrations\\20250424172123_v02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|solutionrelative:cloudcompiuting.api\\migrations\\20250424172123_v02.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|c:\\users\\jhord\\documents\\universidad\\sexto semestre\\repo-6to\\cloudcompiuting.api\\cloudcompiuting.api\\cloudcompiuting.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|solutionrelative:cloudcompiuting.api\\cloudcompiuting.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D1802DD-420B-4F34-924A-1FB9D3543B8F}|CloudCompiuting.Api\\CloudCompiuting.Api.csproj|c:\\users\\jhord\\documents\\universidad\\sexto semestre\\repo-6to\\cloudcompiuting.api\\cloudcompiuting.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +46,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Pais.cs",
               "DocumentMoniker": "C:\\Users\\jhord\\Documents\\Universidad\\Sexto Semestre\\repo-6to\\CloudCompiuting.Api\\CluodComputing.Models\\Pais.cs",
               "RelativeDocumentMoniker": "CluodComputing.Models\\Pais.cs",
@@ -58,12 +58,11 @@
               "RelativeToolTip": "CluodComputing.Models\\Pais.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAUwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T17:39:36.665Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T17:39:36.665Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PaisesController.cs",
               "DocumentMoniker": "C:\\Users\\jhord\\Documents\\Universidad\\Sexto Semestre\\repo-6to\\CloudCompiuting.Api\\CloudCompiuting.Api\\Controllers\\PaisesController.cs",
               "RelativeDocumentMoniker": "CloudCompiuting.Api\\Controllers\\PaisesController.cs",
@@ -71,12 +70,11 @@
               "RelativeToolTip": "CloudCompiuting.Api\\Controllers\\PaisesController.cs",
               "ViewState": "AgIAAE0AAAAAAAAAAAAqwGsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T17:39:22.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-25T17:39:22.361Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "20250424172123_v02.cs",
               "DocumentMoniker": "C:\\Users\\jhord\\Documents\\Universidad\\Sexto Semestre\\repo-6to\\CloudCompiuting.Api\\CloudCompiuting.Api\\Migrations\\20250424172123_v02.cs",
               "RelativeDocumentMoniker": "CloudCompiuting.Api\\Migrations\\20250424172123_v02.cs",
@@ -84,12 +82,11 @@
               "RelativeToolTip": "CloudCompiuting.Api\\Migrations\\20250424172123_v02.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAQwGUAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:21:23.31Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T17:21:23.31Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\jhord\\Documents\\Universidad\\Sexto Semestre\\repo-6to\\CloudCompiuting.Api\\CloudCompiuting.Api\\Program.cs",
               "RelativeDocumentMoniker": "CloudCompiuting.Api\\Program.cs",
@@ -97,12 +94,11 @@
               "RelativeToolTip": "CloudCompiuting.Api\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAswBQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T17:05:10.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T17:05:10.759Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\jhord\\Documents\\Universidad\\Sexto Semestre\\repo-6to\\CloudCompiuting.Api\\CloudCompiuting.Api\\appsettings.json",
               "RelativeDocumentMoniker": "CloudCompiuting.Api\\appsettings.json",
@@ -110,8 +106,7 @@
               "RelativeToolTip": "CloudCompiuting.Api\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-24T16:37:21.732Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T16:37:21.732Z"
             },
             {
               "$type": "Document",
@@ -151,7 +146,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "CloudCompiuting.Api.csproj",
               "DocumentMoniker": "C:\\Users\\jhord\\Documents\\Universidad\\Sexto Semestre\\repo-6to\\CloudCompiuting.Api\\CloudCompiuting.Api\\CloudCompiuting.Api.csproj",
               "RelativeDocumentMoniker": "CloudCompiuting.Api\\CloudCompiuting.Api.csproj",
