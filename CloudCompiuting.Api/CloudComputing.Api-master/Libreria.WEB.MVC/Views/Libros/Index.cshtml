@@ -52,7 +52,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ISBN)
+                @Html.DisplayFor(modelIten=>item.ISBN)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PublicationDate)
@@ -81,3 +81,21 @@
 }
     </tbody>
 </table>
+
+@if (Model != null && Model.Any())
+{
+    <p>Paginas en esta lista: @Model.Sum(l => l.Pages)</p>
+}
+else
+{
+    <p>No hay libros disponibles para calcular el total de páginas.</p>
+}
+
+@if (ViewBag.LibroAntiguo != null)
+{
+    <p>Libro más antiguo: @ViewBag.LibroAntiguo.Title, publicado el @ViewBag.LibroAntiguo.PublicationDate</p>
+}
+else
+{
+    <p>No se encontró el libro más antiguo.</p>
+}

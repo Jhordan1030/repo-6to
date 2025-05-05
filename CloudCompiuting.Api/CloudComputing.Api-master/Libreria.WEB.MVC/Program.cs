@@ -7,6 +7,7 @@ namespace Libreria.WEB.MVC
     {
         public static void Main(string[] args)
         {
+            //var BaseUrl = "https://cloudapi-bmg0dcbxd0bnagd0.westus-01.azurewebsites.net/api";
             var BaseUrl = "https://localhost:7046/api";
 
             Crud<Pais>.EndPoint = $"{BaseUrl}/Paises";
@@ -28,7 +29,9 @@ namespace Libreria.WEB.MVC
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseExceptionHandler("/Home/Error");
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

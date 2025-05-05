@@ -5,7 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48100aa5-240d-4524-9a2d-f57bd4bc29ef" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../Python/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Python/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/CloudCompunting.Models/Libro.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/CloudCompunting.Models/Libro.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/CloudComputing.Api/CloudComputing.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/CloudComputing.Api/CloudComputing.Api.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/CloudComputing.Api/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/CloudComputing.Api/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Controllers/AutoresController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Controllers/AutoresController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Controllers/EditorialesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Controllers/EditorialesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Controllers/LibrosController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Controllers/LibrosController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Autores/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Autores/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Autores/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Autores/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Editoriales/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Editoriales/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Editoriales/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Editoriales/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Editoriales/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Editoriales/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Create.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Delete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Delete.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Details.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Details.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Libros/Index.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Paises/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../CloudCompiuting.Api/CloudComputing.Api-master/Libreria.WEB.MVC/Views/Paises/Edit.cshtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,31 +39,31 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2wMsR82QUycgCW0Slc4CUCvPHsT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Inicial.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/jhord/Documents/Universidad/Sexto Semestre/repo-6to/ANAALG/Tareas Adicionales/Clase 5/Java/TareaAd-Clase5",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Inicial.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jhord/Documents/Universidad/Sexto Semestre/repo-6to/ANAALG/Tareas Adicionales/Clase 5/Java/TareaAd-Clase5&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -63,6 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1745862765984</updated>
       <workItem from="1745862767696" duration="3471000" />
+      <workItem from="1746158223518" duration="123000" />
     </task>
     <servers />
   </component>

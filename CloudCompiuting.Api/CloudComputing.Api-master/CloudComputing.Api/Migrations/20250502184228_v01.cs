@@ -114,7 +114,7 @@ namespace CloudComputing.Api.Migrations
                 column: "PaisId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Libros_AutorId",
+                name: "IX_Libros_AutorId", 
                 table: "Libros",
                 column: "AutorId");
 

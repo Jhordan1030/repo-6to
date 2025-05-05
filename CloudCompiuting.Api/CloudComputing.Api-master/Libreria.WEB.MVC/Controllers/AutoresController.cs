@@ -2,6 +2,7 @@
 using CloudComputing.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CloudComputing.WEB.MVC.Controllers
 {
@@ -24,6 +25,7 @@ namespace CloudComputing.WEB.MVC.Controllers
         // GET: AutoresController/Create
         public ActionResult Create()
         {
+            ViewBag.ListaPaises = ListaPaises();
             return View();
         }
 
@@ -43,10 +45,21 @@ namespace CloudComputing.WEB.MVC.Controllers
                 return View(autor);
             }
         }
+        private List<SelectListItem> ListaPaises()
+        {
+            var paises = Crud<Pais>.GetAll().Result;
+            var lista = paises.Select(x => new SelectListItem
+            {
+                Value = x.Id.ToString(),
+                Text = x.Name,
 
+            }).ToList();
+            return lista;
+        }
         // GET: AutoresController/Edit/5
         public ActionResult Edit(int id)
         {
+            ViewBag.ListaPaises = ListaPaises();
             var data = Crud<Autor>.Get(id).Result;
             return View(data);
         }

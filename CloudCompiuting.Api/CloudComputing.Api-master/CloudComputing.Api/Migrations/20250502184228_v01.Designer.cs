@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CloudComputing.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250424163316_v01")]
+    [Migration("20250502184228_v01")]
     partial class v01
     {
         /// <inheritdoc />
@@ -19,7 +19,7 @@ namespace CloudComputing.Api.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.11")
+                .HasAnnotation("ProductVersion", "9.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);

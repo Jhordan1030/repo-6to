@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using CloudComputing.Models;
 using CloudComputing.API.Consumer;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CloudComputing.WEB.MVC.Controllers
 {
@@ -12,6 +13,7 @@ namespace CloudComputing.WEB.MVC.Controllers
         public ActionResult Index()
         {
             var data = Crud<Editorial>.GetAll().Result;
+            ViewBag.TotalRegistros = data.Count;
             return View(data);
         }
 
@@ -25,6 +27,8 @@ namespace CloudComputing.WEB.MVC.Controllers
         // GET: EditorialesController/Create
         public ActionResult Create()
         {
+            ViewBag.ListaPaises = ListaPaises();
+
             return View();
         }
 
@@ -44,13 +48,27 @@ namespace CloudComputing.WEB.MVC.Controllers
                 return View(editorial);
             }
         }
+        private List<SelectListItem> ListaPaises()
+        {
+            var paises = Crud<Pais>.GetAll().Result;
+            var lista = paises.Select(x => new SelectListItem
+            {
+                Value = x.Id.ToString(),
+                Text = x.Name,
+
+            }).ToList();
+            return lista;
+        }
 
         // GET: EditorialesController/Edit/5
         public ActionResult Edit(int id)
         {
+            ViewBag.ListaPaises = ListaPaises();
             var data = Crud<Editorial>.Get(id).Result;
             return View(data);
         }
+
+        
 
         // POST: EditorialesController/Edit/5
         [HttpPost]
